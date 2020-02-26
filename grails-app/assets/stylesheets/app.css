@@ -1,0 +1,498 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+html, body {
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 300;
+    color: #4a525d;
+    font-size: medium;
+    height: 100%;
+    background: url(../images/sea.png) 50% 0 no-repeat transparent;
+}
+
+body{
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: stretch;
+    align-content: stretch;
+    flex-flow: row wrap;
+}
+
+h1 {
+    padding: 30px 0 20px 0;
+}
+
+h2 {
+    padding: 20px 0 15px 0;
+}
+
+ul, ol {
+    margin: 20px 0 20px 50px;
+}
+
+ul li, ol li {
+    line-height: 1.7;
+}
+p {
+    margin-bottom: 20px;
+    line-height: 1.7;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+    border-bottom: 1px solid darkred;
+    color: darkred;
+}
+
+input[type=text], select{
+    padding: 10px;
+    outline: none;
+}
+
+a:hover{
+    border-bottom: none;
+}
+
+label{
+    display: flex;
+    flex-flow: row wrap;
+}
+
+table{
+    margin: 30px 0;
+    border-spacing: 0;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table th{
+    background-color: #f1efef;
+}
+
+table th, table td{
+    border: 1px solid #cecece;
+    padding: 10px;
+}
+
+table td .name{
+    font-size: larger;
+}
+
+table td .link{
+    font-size: smaller;
+}
+
+table .actions{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+table .actions-column{
+    width: 200px;
+}
+
+table input{
+    padding: 10px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+}
+
+table td .actions form:first-child{
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
+
+table input:hover{
+    background: darkred;
+    color: white;
+}
+
+.button{
+    padding: 10px 20px;
+    background: darkred;
+    color: white;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    flex-grow: 1;
+    flex-basis: 50px;
+    font-size: inherit;
+}
+
+.hide{
+    display: none;
+}
+
+.show{
+    display: inline-block;
+}
+
+.message{
+    padding-bottom: 20px;
+}
+
+.error{
+    color: red;
+    margin: 0 0 20px 0;
+    padding: 10px 20px 10px 50px;
+    border: 1px dashed;
+    background: #fef3f3;
+    position: relative;
+}
+
+.error:before{
+    content: '';
+    background: url(../images/error.svg) 50% 50% no-repeat transparent;
+    background-size: contain;
+    width: 20px;
+    height: 100%;
+    position: absolute;
+    margin-left: -35px;
+    margin-top: -10px;
+}
+
+.error ol, .error ul, .success ol, .success ul {
+    margin: 0;
+    list-style: none;
+}
+
+.success{
+    color: green;
+    margin: 0 0 20px 0;
+    padding: 10px 20px 10px 50px;
+    border: 1px dashed;
+    background: #f7fff5;
+    position: relative;
+}
+
+.success:before{
+    content: '';
+    background: url(../images/success.svg) 50% 50% no-repeat transparent;
+    background-size: contain;
+    width: 20px;
+    height: 100%;
+    position: absolute;
+    margin-left: -35px;
+    margin-top: -10px;
+}
+
+.button:hover{
+    background: firebrick;
+}
+
+
+/**
+* Header
+**/
+
+.container .main header menu{
+    display: flex;
+    margin-top: 50px;
+    justify-content: space-around;
+    background-color: black;
+    flex-flow: row wrap;
+}
+
+.container .main header menu .logo{
+    display: block;
+}
+
+.container .main header menu .items{
+    display: flex;
+}
+
+.container .main header menu .items .item{
+    display: block;
+}
+
+.container .main header menu .items .item a{
+    color: white;
+    border-bottom: none;
+    background-color: #4e555b;
+    padding: 20px 30px;
+}
+
+.container .main header menu .items .item a:hover, .top-menu-active{
+    color: yellow !important;
+    background-color: darkred !important;
+}
+
+.container .main header .logo a{
+    position: absolute;
+    border: 10px solid #4e555b;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-top: -20px;
+    display: flex;
+    align-items: center;
+    font-size: large;
+    font-weight: 800;
+    color: white;
+    background: #fff url(../images/palm.png) 50% 50% no-repeat;
+    background-size: contain;
+}
+
+.container .main header .logo a:hover{
+    color: yellow;
+    border: 10px solid darkred;
+}
+
+.container .main header .logo a span{
+    margin: 0 0 0 90px;
+}
+
+
+/**
+* Footer
+**/
+
+.container .main footer{
+    background-color: #4e555b;
+    color: white;
+    padding: 50px;
+    margin-top: 50px;
+    flex: 0 0 auto;
+}
+
+/**
+* Content
+**/
+
+.container{
+    flex-basis: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-flow: row wrap;
+    padding: 0 20px;
+    flex-direction: column;
+}
+
+.paginateButtons a{
+    margin: 10px;
+
+}
+
+.paginateButtons .currentStep{
+    background: darkred;
+    color: white;
+    padding: 7px 15px;
+
+}
+
+.container .content{
+    width: 100%;
+    flex: 1 0 auto;
+    margin-top: 50px;
+}
+
+.container .content .items{
+    margin: 30px 0;
+}
+
+.container .content .items{
+    display: flex;
+    flex-direction: column;
+}
+
+.container .content .top-actions{
+    display: flex;
+}
+
+.container .items .item{
+    display: flex;
+    flex-flow: row wrap;
+    padding: 10px 0;
+}
+
+.container .items .item label .check-box{
+    margin: 0 20px 0 0;
+}
+
+.container .items .item label .name,
+.container .items .item label .capital,
+.container .items .item .edit,
+.container .items .item .delete{
+    margin: 0 20px;
+}
+
+.container .actions{
+    display: flex;
+}
+
+.container .actions a{
+    margin-right: 20px;
+}
+
+.container .main{
+    display: flex;
+    min-height: 100%;
+    flex-direction: column;
+    width: 100%;
+}
+
+.container .main input[type=text]{
+    margin: 20px 0;
+}
+
+.container .main .items{
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.container .main .items label{
+    margin-right: 20px;
+}
+
+.container .main .items label input[type=checkbox]{
+    margin-top: 5px;
+}
+
+.container .main .field{
+    display: flex;
+}
+
+.container .main .field input[type=text] {
+    flex-grow: 10;
+    margin: 0 20px 0 0;
+    border: 6px solid #f6d80b;
+    font-size: inherit;
+    padding: 20px;
+}
+
+.container .main .countries-block {
+    display: flex;
+    margin-bottom: 20px;
+    flex-flow: row wrap;
+}
+
+.container .main .countries-block .title{
+    display: flex;
+    flex-flow: row nowrap;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.container .main .countries-block .countries{
+    display: flex;
+    flex-flow: row wrap;
+    background: #f1efef;
+}
+
+.container .main .countries-block label input{
+    display: none;
+}
+
+.container .main .countries-block label input~ span{
+    padding: 15px 20px;
+    background: #f1efef;
+    cursor: pointer;
+}
+
+.container .main .countries-block label input:checked~ span{
+    background: darkred;
+    color: white;
+}
+
+.container .main .content .dialog .row{
+    margin: 20px 0;
+}
+
+.container .main .content .dialog .row label{
+    display: flex;
+    align-items: center;
+}
+
+.container .main .content .dialog .row input{
+    margin: 0;
+}
+
+.container .main .content .dialog .row .name{
+    flex-basis: 100px;
+    margin-right: 10px;
+}
+
+.container .main .content .dialog .row .name span{
+    color: red;
+}
+
+
+/**
+* Звезды
+**/
+
+.rating-area {
+    overflow: hidden;
+}
+
+.rating-area:not(:checked) > input {
+    display: none;
+}
+
+.rating-area:not(:checked) > label {
+    float: right;
+    width: 35px;
+    padding: 0;
+    cursor: pointer;
+    font-size: 40px;
+    line-height: 40px;
+    color: lightgrey;
+    text-shadow: 1px 1px #bbb;
+}
+
+.rating-area:not(:checked) > label:before {
+    content: '★';
+}
+
+.rating-area > input:checked ~ label{
+    color: gold;
+    text-shadow: 1px 1px goldenrod;
+}
+
+.rating-area:not(:checked) > label:hover,
+.rating-area:not(:checked) > label:hover ~ label{
+    color: gold;
+}
+
+.rating-area > input:checked + label:hover,
+.rating-area > input:checked + label:hover ~ label,
+.rating-area > input:checked ~ label:hover,
+.rating-area > input:checked ~ label:hover ~ label,
+.rating-area > label:hover ~ input:checked ~ label {
+    color: gold;
+    text-shadow: 1px 1px goldenrod;
+}
+
+.rate-area > label:active {
+    position: relative;
+}
+
+.rating-mini {
+    display: inline-block;
+    font-size: 0;
+}
+
+.rating-mini span {
+    padding: 0;
+    font-size: 20px;
+    line-height: 1;
+    color: lightgrey;
+}
+
+.rating-mini > span:before {
+    content: '★';
+}
+
+.rating-mini > span.active {
+    color: gold;
+}
