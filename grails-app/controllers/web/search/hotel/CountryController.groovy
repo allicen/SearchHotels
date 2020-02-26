@@ -10,7 +10,7 @@ class CountryController {
     static allowedMethods = [save: 'POST', update: 'POST', delete: 'POST', edit: 'GET']
 
     def index() {
-        return [ countries: Country.list(params()) ]
+        return [countries: Country.list(params())]
     }
 
     def params(){
